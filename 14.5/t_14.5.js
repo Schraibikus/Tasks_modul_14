@@ -45,7 +45,7 @@ function showResult(apiData) {
     cards += cardBlock;
   });
   resultNode.innerHTML = cards;
-  resultNode.style.marginTop = "20px"; //немного приукрасил, чтобы вывод был покрасивее, можно было и через style.css сделать, но захотелось здесь
+  resultNode.style.marginTop = "20px";
   resultNode.style.display = "flex";
   resultNode.style.flexWrap = "wrap";
   resultNode.style.gap = "10px";
