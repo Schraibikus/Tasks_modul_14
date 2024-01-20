@@ -16,10 +16,8 @@ function showError(message) {
 }
 
 const useRequest = (page, limit) => {
-  return fetch(
-    // `https://jsonplaceholder.typicode.com/photos?_page=${page}&_limit=${limit}`
-    `https://picsum.photos/v2/list?page=${page}&limit=${limit}` //Использовал URL из задачи 3, потому что с URL который приведен в этом задании ничего не происходит, VPN тоже не помогает
-  )
+  const url = `https://picsum.photos/v2/list?page=${page}&limit=${limit}`;
+  return fetch(url)
     .then((response) => {
       return response;
     })
