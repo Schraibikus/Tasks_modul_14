@@ -1,3 +1,5 @@
+const API_URL = "https://picsum.photos/v2/list/?limit=";
+
 function useRequest(url, callback) {
   let xhr = new XMLHttpRequest();
   xhr.open("GET", url, true);
@@ -47,8 +49,7 @@ btnNode.addEventListener("click", () => {
   if (value < 1 || value > 10) {
     resultNode.innerHTML = "<p>число вне диапазона от 1 до 10</p>";
   } else {
-    // url = `https://jsonplaceholder.typicode.com/photos?_limit=${value}`;
-    url = `https://picsum.photos/v2/list/?limit=${value}`; //Использовал URL из примера, потому что с URL который приведен в задании ничего не происходит, VPN тоже не помогает
+    url = API_URL + `${value}`;
     useRequest(url, displayResult);
   }
 });
