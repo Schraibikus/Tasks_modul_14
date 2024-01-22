@@ -46,10 +46,14 @@ function displayResult(apiData) {
 
 btnNode.addEventListener("click", () => {
   const value = document.querySelector("input").value;
-  if (value < 1 || value > 10) {
-    resultNode.innerHTML = "<p>число вне диапазона от 1 до 10</p>";
-  } else {
-    url = API_URL + `${value}`;
-    useRequest(url, displayResult);
+  const validateInput = (value) => {
+    if (value < 1 || value > 10) {
+      resultNode.innerHTML = "<p>число вне диапазона от 1 до 10</p>";
+      return false;
+    }
+    return true;
+  };
+  if (validateInput(value)) {
+    useRequest(`${API_URL}${value}`, displayResult);
   }
 });
